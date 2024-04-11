@@ -56,7 +56,7 @@ body {
   display: grid;
   grid-template-areas:
     "c r b"
-    "c y b";
+    "c o b";
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
@@ -90,7 +90,7 @@ body {
 }
 
 .o-card {
-  grid-area: y;
+  grid-area: o;
   border-top-color: hsl(34, 97%, 64%);
 }
 
@@ -115,4 +115,39 @@ body {
 .card > img {
   width: 64px;
   align-self: end;
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 80%;
+    height: auto;
+
+    grid-template-rows: 1fr 4fr;
+  }
+
+  .content {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 23px;
+  }
+
+  .cards {
+    width: 100%;
+    height: auto;
+    grid-template-areas:
+      "c"
+      "r"
+      "o"
+      "b";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .card {
+    width: auto;
+    height: 170px;
+  }
 }
